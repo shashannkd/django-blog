@@ -1,0 +1,27 @@
+In [1]: from articles.models import Article
+
+In [2]: Article
+Out[2]: articles.models.Article
+
+In [3]: Article.objects.all()
+Out[3]: <QuerySet [<Article: Article object (1)>, <Article: Article object (2)>]>
+In [4]: article = Article()
+
+In [5]: article
+Out[5]: <Article: Article object (None)>
+
+In [6]: article.title = 'hello'
+
+In [7]: article.title
+Out[7]: 'hello'
+
+In [8]: article.save()
+
+In [9]: Article
+Out[9]: articles.models.Article
+
+In [10]: Article.objects.all()
+Out[10]: <QuerySet [<Article: Article object (1)>, <Article: Article object (2)>, <Article: Article object (3)>]>
+
+In [11]: Article.objects.all()[0].title
+Out[11]: 'Hello, World'
